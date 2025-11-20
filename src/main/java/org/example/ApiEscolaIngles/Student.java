@@ -41,12 +41,15 @@ public class Student {
     @Email(message = "Por favor, insira um e-mail válido")
     private String email;
 
+    @jakarta.persistence.OneToMany(mappedBy = "student")
+    private java.util.List<Homework> homeworks;
 
     //Construtor vazio para o JPA
     public Long getId() {
         return id;
     }
 
+    //Getters e Setters
     public void setId(Long id) {
         this.id = id;
     }
@@ -65,5 +68,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public java.util.List<Homework> getHomeworks() {
+        return homeworks;
+    }
+
+    public void setHomeworks(java.util.List<Homework> homeworks) {
+        this.homeworks = homeworks;
     }
 }
