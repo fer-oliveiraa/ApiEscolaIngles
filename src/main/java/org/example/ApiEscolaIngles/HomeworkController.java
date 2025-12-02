@@ -20,8 +20,8 @@ public class HomeworkController {
     //Cadastrando uma tarefa pra um aluno
     //POST /stundents/{stundetId}/homework
 
-    @PostMapping("/students/{studentId{/homework")
-    public ResponseEntity<Homework> create(@PathVariable Long studentId, @RequestBody @Valid Homework homework) {
+    @PostMapping("/students/{studentId}/homework")
+    public ResponseEntity<Homework> create(@PathVariable("studentId") Long studentId, @RequestBody @Valid Homework homework) {
 
         //Buscando o aluno pelo ID, se não existir e lançado um alerta 404.
         Student student = studentRepository.findById(studentId)

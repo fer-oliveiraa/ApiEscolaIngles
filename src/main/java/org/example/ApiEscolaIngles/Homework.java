@@ -18,7 +18,7 @@ public class Homework {
     @NotBlank(message = "A descrição da tarefa é obrigatória")
     private String description;
 
-    @NotBlank(message = "A data de entrega é obrigatoria")
+    @NotNull(message = "A data de entrega é obrigatoria")
     @Future(message = "A data de entrega deve ser no futuro")
     private LocalDate dueDate;
 
